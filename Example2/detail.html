@@ -1,0 +1,25 @@
+<form role="form" name="myForm">
+  <div class="control-group" ng-class="{'has-error': myForm.name.$invalid && !myForm.name.$pristine}">
+    <label class="control-label">Name</label>
+    <input type="text" class="form-control" name="name" ng-model="data.name" required>
+    <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="text-danger"> 
+    Required 
+    </span> 
+  </div>
+  <div class="control-group" ng-class="{'has-error': myForm.tel.$invalid && !myForm.tel.$pristine}">
+    <label class="control-label">Tel</label>
+    <input type="text" class="form-control" name="tel" ng-model="data.tel" number required>
+    <span ng-show="myForm.tel.$error.required && !myForm.tel.$pristine" class="text-danger"> 
+    Required 
+    </span> 
+  </div>  
+  <div class="control-group">
+  <label>Address</label>
+  <textarea name="address" class="form-control" rows="3"
+        ng-model="data.address"></textarea>
+ </div>
+  <br>
+  <a href="#/" class="btn btn-default">Cancel</a>
+  <button ng-disabled="myForm.$invalid"  class="btn btn-primary">Save</button>
+  <button class="btn btn-danger">Delete</button>
+</form>
